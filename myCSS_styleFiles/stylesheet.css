@@ -114,7 +114,7 @@ h1 {
 
 .thumbnail {
     padding: 0 0 15px 0;
-    border: none;
+    border-color: white;
     border-radius: 0;
 }
 
