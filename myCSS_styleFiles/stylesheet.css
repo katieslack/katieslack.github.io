@@ -41,7 +41,7 @@
 }
 
 .container-fluid {
-    padding-top: 50px;
+    padding-top: 10px;
     padding-bottom: 50px;
     margin-top: 20px;
     font-size: 18px;
@@ -73,6 +73,10 @@ p {
     margin-bottom: 15px;
     margin-right: 70px;
     margin-left: 70px;
+}
+
+.row-bottom {
+    border-spacing: 100px;
 }
 
 head {
