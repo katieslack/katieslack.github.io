@@ -223,3 +223,9 @@ h3 {
     text-align: center;
     margin-bottom: 100px;
 }
+
+.container-fluid-webApp {
+    margin-left: 50 px;
+    margin-right: 50px;
+    text-align:justify;
+}
