@@ -1,52 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>A Leaflet map!</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
-  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-  <script src="Bike_Thefts_sample.js"></script>
-  <style>
-    #mapId{ width: 900px; height: 500px; }
-  </style>
+  <title>My Site</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--create a navigation bar at the top of the site. Each tab will go to a new page. -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Katie Slack (they/them, she/her)</a>
+      </div>
+      <!--add code below to open page into a new tab, or give the option to-->
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">About</a></li>
+          <li><a href="Arch_and_GIS.html">Archaeology & GIS</a></li>
+          <li><a href="art_index.html">Art</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 
-  <div id="mapId"></div>
 
-  <script>
+  <div class="container-fluid bg-1 text-center">
+    <img src="abiqui_long.jpg" class="img-responsive" style="width:100%" alt="Foothills">
+    <h1>Archaeology, Art and ___</h1>
+    <br>
+  </div>
 
-function addPopups(feature, layer) {
-  // this if statement is used to check whether the feature has a property named "Location"
-  if (feature.properties && feature.properties.Location) {
-    layer.bindPopup(feature.properties.Location)
-  }
-}
-
-  /* initialize the map. 
-  setView method: Sets the view of the map (geographical center and zoom) with the given animation options.
-
-  setView( <LatLng> center, <Number> zoom?, <zoom/pan options> options? )
-  */
-  
-  var map = L.map('mapId').setView([34.5199, -105.8701],6);
-
-  //replace the code below from the Plain JavaScript from the map style you choose
-  //at http://leaflet-extras.github.io/leaflet-providers/preview/
-
-  var CyclOSM = L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
-	maxZoom: 20,
-	attribution: '<a href="https://github.com/cyclosm/cyclosm-cartocss-style/releases" title="CyclOSM - Open Bicycle render">CyclOSM</a> | Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-});
-
-  
-  //change the varialbe "OpenTopoMap" according to the map style you choose
-  //It is the varialbe between "var" and "= L.titleLayer(..."  in Line 28 in this script
-  CyclOSM.addTo(map);
-
-  L.geoJSON(bikeThefts, {
-    onEachFeature: addPopups
-  }). addTo(map);
-
-  </script>
+  <div class="border">
+    <div class="container-fluid bg-2 text-center">
+      <h3>Who am I?</h3>
+      <div class="col-sm-5">
+        <img src="me_about.jpg" alt="picture of me" class="img-responsive" style="width:70%">
+        <div class="bottom">Picture taken at Chaco Culture National Hisotrical Park</div>
+      </div>
+      <div class="col-sm-7 text-align">
+        <p> I am currently a scholar at the University of New Mexico pursuing a BS in Anthropology. My concentration is
+          Archaeology and I am minoring in GIS. I am interested in....
+        </p>
+      </div>
+      <div class="row">
+        <p>Get in touch!
+          <br>
+          UNM email: kslack1@unm.edu <br>
+          Personal email: katieslack824@gmail.com
+        </p>
+      </div>
+    </div>
+  </div>
+  <footer class="container-fluid bg-4 text-center">
+    <p>Code by Katie Slack <br>
+      Made with resources from W3 & Bootstrap and guidance from Dr. Liping Yang</p>
+  </footer>
 </body>
+
 </html>
