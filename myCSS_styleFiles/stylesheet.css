@@ -8,10 +8,9 @@
 
 .navbar {
     padding-top: 15px;
-    padding-bottom: 15px;
     border: 0;
     border-radius: 0;
-    margin-bottom: 0;
+    margin-bottom: 0px;
     font-size: 14px;
     letter-spacing: 5px;
     background-color: #ffffff;
@@ -186,11 +185,9 @@ h1 {
 .border-cv {
     border: 7px solid;
     border-radius: 10px;
-    margin-top: 15px;
-    margin-bottom: 15px;
     margin-right: 100px;
     margin-left: 100px;
-    background-color: aliceblue;
+    background-color: rgba(240, 248, 255, 0.668);
 }
 
 .container-fluid-cv {
@@ -201,13 +198,10 @@ h1 {
 }
 
 
-
-.container-fluid-footer-1 {
-    color: aliceblue;
-}
-
 .background {
-    background-image: url("../Images/abiqui_mesas.jpg");
+    background-image: url("../Images/image924.png");
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 
