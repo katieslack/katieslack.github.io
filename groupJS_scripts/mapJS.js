@@ -14,7 +14,7 @@ var osmH = L.tileLayer(osmHUrl, {
 var map = L.map('map', {
   layers: [osmH], 
   center: new L.LatLng(35.1324, -106.6952),
-  zoom: 12,
+  zoom: 11,
   maxBounds: [
     [90, -180],
     [-90, 180],

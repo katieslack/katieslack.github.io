@@ -1,0 +1,3 @@
+This web app is intended for use by all, especially New Mexicans, educators, studuents, reserachers, and scientists. It is an application showing changing in New Mexican riparian areas from 2000-2015 using data from BEMP and EIA, made possible by the University of New Mexico. Please reach out with any questions or comments to the contacts listed on the app.
+
+Date: 05/10/2022

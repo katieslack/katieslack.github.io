@@ -7,14 +7,14 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Riparian vegetation along the Rio Grande Corridor over time</title>
-    <link rel="icon" type="image/x-icon" href="Images/VG_river_favicon_2.png">
+    <link rel="icon" type="image/x-icon" href="images/VG_river_favicon_2.png">
     <!--CSS SCRIPTS-->
     <link rel="stylesheet" href="JS_CSS_downloaded_libraries/bootstrap.css" />
     <link rel="stylesheet" href="JS_CSS_downloaded_libraries/leaflet.css" />
     <link rel="stylesheet" href="JS_CSS_downloaded_libraries/leaflet.timeline.css" />
     <!--JS SCRIPTS-->
     <script src="JS_CSS_downloaded_libraries/leaflet.js"></script>
-    <script src="JS_CSS_downloaded_libraries/leaflet.timeline.js"></script>
+  
     <!--D3-->
     <script src="JS_CSS_downloaded_libraries/d3.js"></script>
     <!--MAP CSS-->
@@ -33,14 +33,13 @@
                     <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
                 </ul>
             </div>
-            </div>
         </nav>
         <!-- HEADER -->
         <div class="container">
             <div class="text-center my-4">
                 <h1 class="fw-bolder"><i>Riparian vegetation along the Rio Grande Corridor over time</i></h1>
                 <!-- I changed the title a bit since our project has changed a little since we first titled it. Feel free to make changes if you want!-->
-                <p class="fw-contrib">By Francisco Logan, Katie Slack, and Emily Smith</p>>
+                <p class="fw-contrib">By Francisco Logan, Katie Slack, and Emily Smith</p>
             </div>
         </div>
     </header>
@@ -92,7 +91,7 @@
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h2 class="card-title h4">Contact us</h2>
-                                <p class="card-text"> Team member: Emily Smith - email <br>
+                                <p class="card-text"> Team member: Emily Smith - ecsmith1912@gmail.com <br>
                                     Team member: <a href="https://flogan00.github.io" target="_blank">Francisco
                                         Logan</a> - franciscologan00@gmail.com<br>
                                     Team member: <a link href="https://katieslack.github.io/" target="_blank">Katie
@@ -125,6 +124,12 @@
                                 <li>Precipitation 1997-2017. From BEMP. University of New Mexico, Albuquerque, NM.
                                     Online: <a href="https://bemp.org/data-sets/" target="_blank">Link</a>. Retrieved
                                     March 1st, 2022.</li>
+                                <li>
+                                    “New Mexico Carbon Dioxide Emissions from Fossil Fuel Consumption” (1970-2019).
+                                    United States Energy Information Administration. Independent Statistics & Analysis.
+                                    Online:<a href="https://www.eia.gov/environment/emissions/state/" target="blank">
+                                        Link</a>
+                                </li>
                                 <li>Vladimir Agafonkin. "Leaflet.js". Javascript Library.(2010-2022). Online: <a
                                         href="https://leafletjs.com/SlavaUkraini/" target="_blank">Link</a></li>
                                 <li>JJ Jin(ptma) & contributors. “Leaflet.Legend”. Github Repository.(2020). Online:<a
@@ -137,10 +142,7 @@
                                         target="_blank">Link</a></li>
                                 <li>Vitaly Gorbachev. Icons8. River Favicon. <a target="_blank"
                                         href="https://icons8.com/icon/ZRBIPROnLHWg/river">River</a> icon by <a
-                                        target="_blank" href="https://icons8.com">Icons8</a></li>
-                                <li>
-                                    <!--Need eia.gov source and link for Carbon Emissions Dataset--> EIA carbon emission
-                                    source and link
+                                        target="_blank" href="https://icons8.com">Icons8</a>
                                 </li>
                             </ul>
                         </div>
@@ -151,15 +153,17 @@
             <div class="col-lg-4">
                 <div class="row">
                     <div class="card mb-4">
-                        <div class="card-header">Map Features</div>
+                        <div class="card-header"> Map Features</div>
                         <p class="card-text">The size of each circle symbol represents the estimated vegetation cover
-                            per site for the year displayed. The symbols create a proportional symbols map. The larger
-                            the symbol, the greater estimated vegetation cover is. The exact value used by the
-                            developers for vegetation cover can be found by clicking on each symbol. Feel free to pause
-                            the timeline, pan and zoom around the Rio Grande corridor to see these distinctions. To use
-                            the timeline more analytically, the years can be manually clicked through. Additionally, the
-                            color of each symbol represents the amount of precipitation received at each site for the
-                            year displayed. Generally, the darker the blue the greater the precipitation value.
+                            per site for the year displayed. The data used provides a coverage value for each vegetation
+                            species which was estimated using sum intercept length. For each year, per site, all species
+                            estimated coverage values were added together. This value was used in a formula to create
+                            the symbol’s radius creating a proportional symbols map. The larger the symbol, the greater
+                            estimated vegetation cover. The exact value used for vegetation can be found by clicking on
+                            each symbol. Additionally, the color of each symbol represents the amount of precipitation
+                            received at each site for the year displayed. Generally, the darker the blue, the greater
+                            the precipitation value. Feel free to pause the timeline and manually click through the
+                            years. You can pan and zoom around the Rio Grande corridor to see all the mapped features.
                         </p>
                     </div>
                 </div>
@@ -169,17 +173,17 @@
                         <div class="card-header">Line graphs</div>
                         <div class="card-body">
                             <div class="row">
-                                <img src="Images/vegLineGraph.png">
+                                <img src="images/vegLineGraph.png">
                                 <div class="card-body">
                                     <p><i>Vegetation in New Mexico from 2000-2015 in centimeters</i></p>
                                     <hr>
                                     <div class="row">
-                                        <img src="Images/precipLineGraph.png">
+                                        <img src="images/precipLineGraph.png">
                                         <div class="card-body">
                                             <p><i> Precipitation in New Mexico from 2000-2015 in milimeters</i></p>
                                             <hr>
                                             <div class="row">
-                                                <img src="Images/co2LineGraph.png">
+                                                <img src="images/co2LineGraph.png">
                                                 <div class="card-body">
                                                     <p><i>CO2 emissions in New Mexico from 2000-2015 in million metric
                                                             tons PPM</i>
@@ -198,6 +202,7 @@
             </div>
             <!--MAP JS -->
             <link rel="stylesheet" href="JS_CSS_downloaded_libraries/leaflet.legend.css" />
+            <script src="JS_CSS_downloaded_libraries/leaflet.timeline.js"></script>
             <script src="JS_CSS_downloaded_libraries/leaflet.legend.js"></script>
             <script src="groupJS_scripts/mapJS.js"></script>
             <script src="data/greatveg_totals.geojson"></script>
