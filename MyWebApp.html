@@ -7,14 +7,12 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Riparian vegetation along the Rio Grande Corridor over time</title>
-    <link rel="icon" type="image/x-icon" href="Images/VG_river_favicon_2.png">
+    <link rel="icon" type="image/x-icon" href="images/VG_river_favicon_2.png">
     <!--CSS SCRIPTS-->
     <link rel="stylesheet" href="JS_CSS_downloaded_libraries/bootstrap.css" />
     <link rel="stylesheet" href="JS_CSS_downloaded_libraries/leaflet.css" />
     <link rel="stylesheet" href="JS_CSS_downloaded_libraries/leaflet.timeline.css" />
     <!--JS SCRIPTS-->
-    <script src="JS_CSS_downloaded_libraries/jquery.min.js"></script>
-    <script src="JS_CSS_downloaded_libraries/bootstrap.min.js"></script>
     <script src="JS_CSS_downloaded_libraries/leaflet.js"></script>
     <script src="JS_CSS_downloaded_libraries/leaflet.timeline.js"></script>
     <!--D3-->
@@ -34,7 +32,6 @@
                     <li class="nav-item"><a class="nav-link" href="treeinfo.html">TREES</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
                 </ul>
-            </div>
             </div>
         </nav>
         <!-- HEADER -->
@@ -63,26 +60,25 @@
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h2 class="card-title h4">About this project</h2>
-
-
-                                This web map seeks to illustrate an estimation of riparian vegetation cover along
-                                the Rio Grande Corridor. This app supplements the vegetation distribution with
-                                precipitation. Precipitation impacts the riparian ecotones. The developers found
-                                precipitation important as the Southwest is projected to grow dryer in the upcoming
-                                decades. This app also seeks to show the variance in riparian vegetation over time,
-                                by displaying unique proportional symbol maps for each year between 2000-2015.
-                                <br>
-                                This map is made for anyone interested in New Mexico ecozones, vegetation change
-                                over time and environmental change during the current period of global warming. The
-                                developers
-                                seek to illustrate the effects of human-caused climate change to riparian regions of
-                                the Rio
-                                Grande Corridor over a recent 15-year span. This map can be used by legislators,
-                                educators and anyone interested in environmental change. Please see our citations to
-                                see where the data was obtained and learn more about riparian area conservation in
-                                New Mexico.<br>
-                                Please click <a href="treeinfo.html" target="_blank">here</a> to read more about
-                                riparian trees in New Mexico.
+                                <p class="card-text">
+                                    This web map seeks to illustrate an estimation of riparian vegetation cover along
+                                    the Rio Grande Corridor. This app supplements the vegetation distribution with
+                                    precipitation. Precipitation impacts the riparian ecotones. The developers found
+                                    precipitation important as the Southwest is projected to grow dryer in the upcoming
+                                    decades. This app also seeks to show the variance in riparian vegetation over time,
+                                    by displaying unique proportional symbol maps for each year between 2000-2015.
+                                    <br>
+                                    This map is made for anyone interested in New Mexico ecozones, vegetation change
+                                    over time and environmental change during the current period of global warming. The
+                                    developers
+                                    seek to illustrate the effects of human-caused climate change to riparian regions of
+                                    the Rio
+                                    Grande Corridor over a recent 15-year span. This map can be used by legislators,
+                                    educators and anyone interested in environmental change. Please see our citations to
+                                    see where the data was obtained and learn more about riparian area conservation in
+                                    New Mexico.<br>
+                                    Please click <a href="treeinfo.html" target="_blank">here</a> to read more about
+                                    riparian trees in New Mexico.
                                 </p>
                             </div>
                         </div>
@@ -95,13 +91,11 @@
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h2 class="card-title h4">Contact us</h2>
-                                <p class="card-text">Team member: <a link href="https://katieslack.github.io/"
-                                        target="_blank">Katie
-                                        Slack</a> - katieslack824@gmail.com<br>
-                                    Team member: Emily Smith - ecsmith1912@gmail.com <br>
+                                <p class="card-text"> Team member: Emily Smith - ecsmith1912@gmail.com <br>
                                     Team member: <a href="https://flogan00.github.io" target="_blank">Francisco
                                         Logan</a> - franciscologan00@gmail.com<br>
-
+                                    Team member: <a link href="https://katieslack.github.io/" target="_blank">Katie
+                                        Slack</a> - katieslack824@gmail.com<br>
                                     Project advisor: <a link href="https://lipingyang.org/" target="_blank">Dr. Liping
                                         Yang</a>
                                     (course instructor of GEOG 485L/585L <i>Internet Mapping</i>)</p>
@@ -133,7 +127,7 @@
                                 <li>
                                     “New Mexico Carbon Dioxide Emissions from Fossil Fuel Consumption” (1970-2019).
                                     United States Energy Information Administration. Independent Statistics & Analysis.
-                                    Online: <a href="https://www.eia.gov/environment/emissions/state/" taget="blank">
+                                    Online:<a href="https://www.eia.gov/environment/emissions/state/" target="blank">
                                         Link</a>
                                 </li>
                                 <li>Vladimir Agafonkin. "Leaflet.js". Javascript Library.(2010-2022). Online: <a
@@ -148,84 +142,21 @@
                                         target="_blank">Link</a></li>
                                 <li>Vitaly Gorbachev. Icons8. River Favicon. <a target="_blank"
                                         href="https://icons8.com/icon/ZRBIPROnLHWg/river">River</a> icon by <a
-                                        target="_blank" href="https://icons8.com">Icons8</a></li>
-
+                                        target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-          
-           
-            
-            <!--Attempt to make Map Features a modal plugin using bootstrap and jquery-->
-            <!-- <div class="col-lg-4">
-                <div class="row">
-                    <div class="card mb-4">
-                        <div class="card-header">How to read the map</div> -->
-            <!-- Create a modal plugin for Map Features -->
-            <!-- Trigger the modal with a button -->
-            <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
-                            data-target="#myModal">Click
-                            here!</button> -->
-
-            <!-- Modal -->
-
-            <!-- <div class="modal fade" id="myModal" role="dialog">
-                            <div class="modal-dialog"> -->
-
-            <!-- Modal content-->
-            <!-- <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Map Features</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>The size of each circle symbol represents the estimated vegetation cover
-                                            per site for the year displayed. The data used provides a coverage value for
-                                            each
-                                            vegetation
-                                            species which was estimated using sum intercept length. For each year, per
-                                            site, all
-                                            species
-                                            estimated coverage values were added together. This value was used in a
-                                            formula to
-                                            create
-                                            the symbol’s radius creating a proportional symbols map. The larger the
-                                            symbol, the
-                                            greater
-                                            estimated vegetation cover. The exact value used for vegetation can be found
-                                            by clicking
-                                            on
-                                            each symbol. Additionally, the color of each symbol represents the amount of
-                                            precipitation
-                                            received at each site for the year displayed. Generally, the darker the
-                                            blue, the
-                                            greater
-                                            the precipitation value. Feel free to pause the timeline and manually click
-                                            through the
-                                            years. You can pan and zoom around the Rio Grande corridor to see all the
-                                            mapped
-                                            features.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default"
-                                            data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+            </div>
+            <!-- SIDE WIDGETS CONTAINER-->
             <div class="col-lg-4">
                 <div class="row">
                     <div class="card mb-4">
-                        <div class ="row">
-                            <h1 View a <a href="https://www.youtube.com/watch?v=lP7NYNFE9U0" target="blank">Demo</a> </h1>
-                        </div>
-                        <div class="card-header">Map Features</div>
-                        <p class="card-text">The size of each circle symbol represents the estimated vegetation cover
+                        <div class="card-header"> Map Features</div>
+                        <p class="card-text">
+                            Prefer to watch a demo video? Watch it <a href="https://www.youtube.com/watch?v=lP7NYNFE9U0" target=blank>here.</a> 
+                            <br>The size of each circle symbol represents the estimated vegetation cover
                             per site for the year displayed. The data used provides a coverage value for each vegetation
                             species which was estimated using sum intercept length. For each year, per site, all species
                             estimated coverage values were added together. This value was used in a formula to create
@@ -244,17 +175,17 @@
                         <div class="card-header">Line graphs</div>
                         <div class="card-body">
                             <div class="row">
-                                <img src="Images/vegLineGraph.png">
+                                <img src="images/vegLineGraph.png">
                                 <div class="card-body">
                                     <p><i>Vegetation in New Mexico from 2000-2015 in centimeters</i></p>
                                     <hr>
                                     <div class="row">
-                                        <img src="Images/precipLineGraph.png">
+                                        <img src="images/precipLineGraph.png">
                                         <div class="card-body">
                                             <p><i> Precipitation in New Mexico from 2000-2015 in milimeters</i></p>
                                             <hr>
                                             <div class="row">
-                                                <img src="Images/co2LineGraph.png">
+                                                <img src="images/co2LineGraph.png">
                                                 <div class="card-body">
                                                     <p><i>CO2 emissions in New Mexico from 2000-2015 in million metric
                                                             tons PPM</i>
@@ -276,6 +207,7 @@
             <script src="JS_CSS_downloaded_libraries/leaflet.legend.js"></script>
             <script src="groupJS_scripts/mapJS.js"></script>
             <script src="data/greatveg_totals.geojson"></script>
+        </div>
 </body>
 
 </html>
