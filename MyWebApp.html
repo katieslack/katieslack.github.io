@@ -63,7 +63,8 @@
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h2 class="card-title h4">About this project</h2>
-                                <p class="card-text">
+
+
                                 This web map seeks to illustrate an estimation of riparian vegetation cover along
                                 the Rio Grande Corridor. This app supplements the vegetation distribution with
                                 precipitation. Precipitation impacts the riparian ecotones. The developers found
@@ -154,7 +155,66 @@
                     </div>
                 </div>
             </div>
-            <!-- SIDE WIDGETS CONTAINER-->
+            <div class="col-lg-4">
+                <div class="row">
+                    <div class="card mb-4">
+                        <div class="card-header">How to read the map</div>
+                        <!--Create a modal plugin for Map Features-->
+                        <!-- Trigger the modal with a button -->
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+                            data-target="#myModal">Click
+                            here!</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Map Features</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>The size of each circle symbol represents the estimated vegetation cover
+                                            per site for the year displayed. The data used provides a coverage value for
+                                            each
+                                            vegetation
+                                            species which was estimated using sum intercept length. For each year, per
+                                            site, all
+                                            species
+                                            estimated coverage values were added together. This value was used in a
+                                            formula to
+                                            create
+                                            the symbol’s radius creating a proportional symbols map. The larger the
+                                            symbol, the
+                                            greater
+                                            estimated vegetation cover. The exact value used for vegetation can be found
+                                            by clicking
+                                            on
+                                            each symbol. Additionally, the color of each symbol represents the amount of
+                                            precipitation
+                                            received at each site for the year displayed. Generally, the darker the
+                                            blue, the
+                                            greater
+                                            the precipitation value. Feel free to pause the timeline and manually click
+                                            through the
+                                            years. You can pan and zoom around the Rio Grande corridor to see all the
+                                            mapped
+                                            features.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- SIDE WIDGETS CONTAINER
             <div class="col-lg-4">
                 <div class="row">
                     <div class="card mb-4">
@@ -171,7 +231,7 @@
                             years. You can pan and zoom around the Rio Grande corridor to see all the mapped features.
                         </p>
                     </div>
-                </div>
+                </div> -->
                 <div class="row">
                     <!-- LINE GRAPH CONTAINER-->
                     <div class="card mb-4">
@@ -205,6 +265,7 @@
 
                 </div>
             </div>
+         </div>
             <!--MAP JS -->
             <link rel="stylesheet" href="JS_CSS_downloaded_libraries/leaflet.legend.css" />
             <script src="JS_CSS_downloaded_libraries/leaflet.legend.js"></script>
