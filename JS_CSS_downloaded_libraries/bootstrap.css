@@ -3954,7 +3954,7 @@ textarea.form-control-lg {
   display: block;
   padding: 0.05rem 0.05rem;
   color:#000000;
-  font-size: large;
+  font-size: medium;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
