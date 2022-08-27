@@ -7648,6 +7648,7 @@ textarea.form-control-lg {
 
 .fw-normal {
   font-weight: 400 !important;
+  font-family: var(--bs-font-sans-serif);
 }
 
 .fw-contrib {
