@@ -191,7 +191,7 @@
 
         <!-- NESTED ROW -->
         <div id="about" class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="row">
                     <!-- ABOUT PARAGRAPH-->
                     <div class="card mb-4">
@@ -292,8 +292,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <!-- SIDE WIDGETS CONTAINER-->
-            <div class="col-lg-4">
+            <div class="col-lg-12">
                 <!-- Below code will be reworked into a modul plugin-->
                 <!-- <div class="row">
                         <div class="card mb-4">
@@ -324,52 +326,62 @@
                             </p>
                         </div>
                     </div> -->
-                <div class="row">
-                    <!-- LINE GRAPH CONTAINER-->
+
+                <!-- LINE GRAPH CONTAINER-->
+                <div class="card mb-4">
+                    <div class="card-header">Line graphs</div>
+                </div>
+                <div class="col-lg-4">
                     <div class="card mb-4">
-                        <div class="card-header">Line graphs</div>
                         <div class="card-body">
-                            <div class="row">
-                                <img src="images/vegLineGraph.png">
-                                <div class="card-body">
-                                    <p><i>Vegetation in New Mexico from 2000-2015 in centimeters</i></p>
-                                    <hr>
-                                    <div class="row">
-                                        <img src="images/precipLineGraph.png">
-                                        <div class="card-body">
-                                            <p><i> Precipitation in New Mexico from 2000-2015 in milimeters</i></p>
-                                            <hr>
-                                            <div class="row">
-                                                <img src="images/co2LineGraph.png">
-                                                <div class="card-body">
-                                                    <p><i>CO2 emissions in New Mexico from 2000-2015 in million
-                                                            metric
-                                                            tons PPM</i>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <img src="images/vegLineGraph.png">
+
+                            <p>Vegetation in New Mexico from 2000-2015 in centimeters</p>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <img src="images/precipLineGraph.png">
+                                <p>Precipitation in New Mexico from 2000-2015 in milimeters</p>
+
                             </div>
                         </div>
                     </div>
-                    <!-- SUPPLEMENTAL INFO CONTAINER-->
-
+                    <div class="col-lg-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <img src="images/co2LineGraph.png">
+                                <p>CO2 emissions in New Mexico from 2000-2015 in million
+                                    metric
+                                    tons PPM
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!--MAP JS -->
-            <link rel="stylesheet" href="JS_CSS_downloaded_libraries/leaflet.legend.css" />
-            <script src="JS_CSS_downloaded_libraries/leaflet.legend.js"></script>
-            <script src="groupJS_scripts/mapJS.js"></script>
-            <script src="data/greatveg_totals.geojson"></script>
         </div>
-        <div>
-            <footer class="container-fluid bg-4 text-center">
-                <p>Web app by Katie Slack, Francisco Logan and Emily Smith with advisement from Dr.Liping Yang<br>
-                    Made with libraries from leaflet, leaflet plugins and bootstrap.</p>
-            </footer>
-        </div>
+    </div>
+    <!-- SUPPLEMENTAL INFO CONTAINER-->
+
+    </div>
+    </div>
+    </div>
+    <!--MAP JS -->
+    <link rel="stylesheet" href="JS_CSS_downloaded_libraries/leaflet.legend.css" />
+    <script src="JS_CSS_downloaded_libraries/leaflet.legend.js"></script>
+    <script src="groupJS_scripts/mapJS.js"></script>
+    <script src="data/greatveg_totals.geojson"></script>
+
+    </div>
+    <div>
+        <footer class="container-fluid bg-4 text-center">
+            <p>Web app by Katie Slack, Francisco Logan and Emily Smith with advisement from Dr.Liping Yang<br>
+                Made with libraries from leaflet, leaflet plugins and bootstrap.</p>
+        </footer>
+    </div>
 </body>
 
 </html>
