@@ -1,9 +1,8 @@
-.bottom {
+#profile_pic_text {
     position: absolute;
     bottom: 8px
     font-size: 12px;
-    color: antiquewhite;
-    opacity: .4;
+    color: black;
 }
  footer {
     margin-bottom: 0px;
