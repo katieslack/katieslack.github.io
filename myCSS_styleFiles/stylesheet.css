@@ -1,11 +1,14 @@
 .bottom {
     position: absolute;
-    bottom: 8px;
+    bottom: 8px
     font-size: 12px;
     color: antiquewhite;
     opacity: .4;
 }
-
+ footer {
+    margin-bottom: 0px;
+    padding: 0px;
+ }
 .navbar {
     padding-top: 15px;
     border: 0;
@@ -46,8 +49,12 @@
     font-size: 20px;
     text-align: left;
 }
-
+/* * {
+    margin:0;
+    padding:0;
+} */
 body {
+    /* margin: 0px; */
     font: 20px "Montserrat", sans-serif;
     line-height: 1.8;
     color: black;
@@ -67,6 +74,7 @@ p {
 
 .margin {
     margin-bottom: 45px;
+    margin-top: 0px;
 }
 
 .border {
@@ -77,7 +85,7 @@ p {
     margin-bottom: 15px;
     margin-right: 70px;
     margin-left: 70px;
-    background-image: url(../Images/abiqui_long_copy.jpg);
+    background-image: url(../Images/Clouds_2.png);
 }
 
 .row-bottom {
@@ -102,7 +110,7 @@ h1 {
 
 /*need to find good color to show up on this, maybe put a small background */
 .carousel-caption h3 {
-    color: #474e5d !important;
+    color: #000000 !important;
 }
 
 @media (max-width: 600px) {
@@ -117,15 +125,19 @@ h1 {
     width: 100%;
 }
 
-
+#contact {
+    text-align:center
+}
 .row {
-    text-align: center;
+    text-align: left;
 }
 
 .thumbnail {
     padding: 0 0 15px 0;
     border: none;
+    border-color: transparent;
     border-radius: 0;
+    margin: 0px;
 }
 
 .thumbnail img {
@@ -157,14 +169,20 @@ h1 {
     opacity: 0.5;
 }
 
+.about_link
+{
+    color: #A200E8;
+}
+/* a {
+    color: #660E8C;
+} */
 
-
-.container-fluid-arch {
-    padding-left: 100px;
-    padding-right: 100px;
+.container-fluid-interests {
+    padding-left: 10%;
+    padding-right: 10%;
     position: relative;
     font-size: 18px;
-    margin-right: 50px;
+    /* margin-right: 50px; */
 }
 
 .container-fluid-img {
@@ -185,14 +203,14 @@ h1 {
 .border-cv {
     border: 7px solid;
     border-radius: 10px;
-    margin-right: 100px;
-    margin-left: 100px;
+    margin-right: 30px;
+    margin-left: 30px;
     background-color: rgba(240, 248, 255, 0.668);
 }
 
 .container-fluid-cv {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
     position: relative;
     font-size: 16px;
 }
@@ -200,8 +218,9 @@ h1 {
 
 .background {
     background-image: url("../Images/image924.png");
-    margin-top: 0px;
-    margin-bottom: 0px;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 
@@ -230,3 +249,100 @@ h3 {
     text-align:left;
     font-size: 18px;
 }
+
+.cv_header {
+    text-align: left;
+}
+
+#div_flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #d863fc;
+    color: black;
+    /* border: solid 1px #c3c3c3; */
+}
+
+#div_panel {
+    padding: 50px;
+    text-align: center;
+    display: none;
+}
+
+#div_flip_2 {
+    padding: 5px;
+    text-align: center;
+    background-color: #de7ffa;
+    color: black;
+    /* border: solid 1px #c3c3c3; */
+}
+
+#div_panel_2 {
+    padding: 50px;
+    text-align: center;
+    display: none;
+}
+
+#div_flip_3 {
+    padding: 5px;
+    text-align: center;
+    background-color: #e195f8;
+    color: black;
+    /* border: solid 1px #c3c3c3; */
+}
+
+#div_panel_3 {
+    padding: 50px;
+    text-align: center;
+    display: none;
+}
+
+#div_flip_4 {
+    padding: 5px;
+    text-align: center;
+    background-color: #e6abf8;
+    color: black;
+    /* border: solid 1px #c3c3c3; */
+}
+
+#div_panel_4 {
+    padding: 50px;
+    text-align: center;
+    display: none;
+}
+
+#div_flip_5 {
+    padding: 5px;
+    text-align: center;
+    background-color: #f0c8fc;
+    color: black;
+    /* border: solid 1px #c3c3c3; */
+}
+
+#div_panel_5 {
+    padding: 50px;
+    text-align: center;
+    display: none;
+}
+
+#div_flip_6 {
+    padding: 5px;
+    text-align: center;
+    background-color: #f5dcfc;
+    color: black;
+    /* border: solid 1px #c3c3c3; */
+}
+
+#div_panel_6 {
+    padding: 50px;
+    text-align: center;
+    display: none;
+}
+
+ .click_text {
+font-size:100%;
+ }
+
+ .centered
+ {
+    text-align:center;
+ }
