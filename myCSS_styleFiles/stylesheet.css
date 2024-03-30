@@ -1,3 +1,15 @@
+.button {
+background-color:rgb(216, 241, 255);
+color:#000000;
+border: none;
+/* padding: 1%; */
+padding: 10px 24px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+} 
+
 #profile_pic_text {
     position: absolute;
     bottom: 8px
@@ -256,7 +268,8 @@ h3 {
 #div_flip {
     padding: 5px;
     text-align: center;
-    background-color: #d863fc;
+    background-color: #b871ff;
+    /* color: white; */
     color: black;
     /* border: solid 1px #c3c3c3; */
 }
@@ -270,7 +283,8 @@ h3 {
 #div_flip_2 {
     padding: 5px;
     text-align: center;
-    background-color: #de7ffa;
+    background-color: #c288fb;
+    /* color: white; */
     color: black;
     /* border: solid 1px #c3c3c3; */
 }
@@ -284,8 +298,9 @@ h3 {
 #div_flip_3 {
     padding: 5px;
     text-align: center;
-    background-color: #e195f8;
+    background-color: #CF9FFF;
     color: black;
+    /* color: white; */
     /* border: solid 1px #c3c3c3; */
 }
 
@@ -298,7 +313,8 @@ h3 {
 #div_flip_4 {
     padding: 5px;
     text-align: center;
-    background-color: #e6abf8;
+    background-color: #d5aefb;
+    /* color: white; */
     color: black;
     /* border: solid 1px #c3c3c3; */
 }
@@ -312,7 +328,8 @@ h3 {
 #div_flip_5 {
     padding: 5px;
     text-align: center;
-    background-color: #f0c8fc;
+    background-color: #debefd;
+    /* color: white; */
     color: black;
     /* border: solid 1px #c3c3c3; */
 }
@@ -326,7 +343,7 @@ h3 {
 #div_flip_6 {
     padding: 5px;
     text-align: center;
-    background-color: #f5dcfc;
+    background-color: #c58bff;
     color: black;
     /* border: solid 1px #c3c3c3; */
 }
