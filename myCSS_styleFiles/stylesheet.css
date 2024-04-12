@@ -1,3 +1,12 @@
+/* #pointer_left{
+    background-image: "../Images/pointer_left";
+}
+
+#pointer_left{
+    background-image: "../Images/pointer_right";
+} */
+
+
 .button {
 background-color:rgb(216, 241, 255);
 color:#000000;
