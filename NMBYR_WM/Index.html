@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>New Mexico Backyard Refuge Program</title>
+    <link rel="icon" type="image/x-icon" href="images/NMBYR_favicon.png">
+    <!--CSS SCRIPTS-->
+    <link rel="stylesheet" href="JS_CSS_downloaded_libraries/bootstrap.css" />
+    <link rel="stylesheet" href="JS_CSS_downloaded_libraries/leaflet.css" />
+    <link rel="stylesheet" href="JS_CSS_downloaded_libraries/leaflet.timeline.css" />
+    <!--JS SCRIPTS-->
+    <script src="JS_CSS_downloaded_libraries/leaflet.js"></script>
+    <script src="JS_CSS_downloaded_libraries/leaflet.timeline.js"></script>
+    <!--D3-->
+    <script src="JS_CSS_downloaded_libraries/d3.js"></script>
+    <!--MAP CSS-->
+    <link rel="stylesheet" href="groupCSS_scripts/mapStyle.css" />
+
+
+    <!-- NEED TO DOWNLOAD FILE IF THIS WORKS -->
+    <link rel="stylesheet"
+        href="https://balladaniel.github.io/leaflet-dataclassification/leaflet-dataclassification.css" />
+
+
+</head>
+
+<body>
+    <div class="row" id="header-row">
+        <div class="col-lg-7">
+            <br>
+            <!-- <h1 id="title" class='align-self-center'>New Mexico Backyard Refuge Program</h1> -->
+            <h1 id="title"> <b>New Mexico Backyard Refuge Program</b></h1>
+        </div>
+        <div id="logos_div" class="col-lg-5">
+            <img class="logo" src="images/CSWCD_logo.png">
+            <img class="logo" src="images/NM_ByR_logo_2026_256.png">
+            <img class="logo" src="images/ValleDeOro_Logo.jpg">
+        </div>
+    </div>
+    <div class="row">
+        <!-- Map and about paragraph-->
+        <div class="col-lg-9">
+            <div class="card mb-4">
+                <!-- INTERACTIVE MAP. DO NOT DELETE <ul id="displayed-list"></ul>-->
+                <ul id="displayed-list"></ul>
+                <div id="map"></div>
+            </div>
+            <div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+
+            <div class="row">
+                <!-- Button trigger modal -->
+                <button type="button" id="modal-button1" class="mx-auto d-block" data-bs-toggle="modal"
+                    data-bs-target="#HabitatModal">
+                    Habitat Map
+                </button>
+
+
+                <button type="button" id="modal-button2" class="mx-auto d-block" data-bs-toggle="modal"
+                    data-bs-target="#ChoroModal">
+                    Neighborhood Density Map
+                </button>
+            </div>
+            <br>
+
+
+            <!-- NM BYR Website Button -->
+            <div class="row">
+
+                <!-- <h2>About this map</h2>
+            <p><b>Birds Layer</b>
+                <br>
+                Migratory and resident birds will venture an average of 800 meters from their home base to look for
+                additional resources. When two or more backyard refuges are within 800 meters of each other, this
+                creates connected habitat for birds.
+            </p> -->
+                <img id="birdImg" class="mx-auto d-block" src="images/NorthernFlicker_BYR.jpg">
+                <p class="imgCaption">Northern Flicker, a resident bird, in a Backyard Refuge</p>
+                <!-- <p><b>Nesting Birds Layer</b>
+                <br>
+                Nesting birds will venture an average of up to 60 meters from their home base. When two or more backyard
+                refuges are within 60 meters of each other, this creates opportunities for connected habitat for nesting
+                birds to help them find the resources they need for raising the next generation.
+            </p> -->
+                <img id="nestingImg" class="mx-auto d-block" src="images/Hummingbird.jpg">
+                <p class="imgCaption">Nesting Hummingbird in a Backyard Refuge</p>
+                <!-- <p><b>Bees Layer</b>
+                <br>
+                Bees will venture an average of 150 meters from their homebase. When two or more backyard refuges are
+                within 150 meters of each other, this provides connected habitat for bees to help them find food and
+                nesting opportunities.
+            </p> -->
+                <img id="beeImg" class="mx-auto d-block" src="images/DiggerBee.jpg">
+                <p class="imgCaption">Digger Bee, a native pollinator, in a Backyard Refuge</p>
+                <!-- 
+            <p><b>Backyard Refuges Density Map</b>
+                <br>
+                This map shows the density of Backyard Refuges per neighborhood association or zipcode in the greater
+                Albuquerque area. The data has been normalized by the number of households in each area, this makes the
+                neighborhood associations and the zipcodes more visually comparable. The shading is based on the ratio
+                of Backyard Refuges to the total number of households in the neighborhood association. Click on each
+                area on the map to read the number of refuges in the area as well as and the ratio of Backyard Refuges
+                to the total number of households.normalized value.
+            </p> -->
+            </div>
+
+            <div class="row">
+
+                <button type="button" id="modal-button3" class="mx-auto d-block" data-bs-toggle="modal"
+                    data-bs-target="#DataModal">
+                    Web Map Data & Sources
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!--MODAL CONTENTS-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="HabitatModal" tabindex="-1" aria-labelledby="HabitatModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="HabitatModalLabel"> <b>About the Habitat Map</b></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This map appears as three concentric circles that represent habitat from backyard
+                        refuge's.
+                        <br>
+                        <br>
+                        <b> Birds Layer </b>
+                        <br>
+                        Migratory and resident birds will venture an average of 800 meters from their home base
+                        to look for additional resources. When two or more backyard refuges are within 800
+                        meters of each other, this creates connected habitat for birds.
+                        <br>
+                        <br>
+                        <b>Nesting Birds Layer</b>
+                        <br>
+                        Nesting birds will venture an average of up to 60 meters from their home base. When two
+                        or more backyard refuges are within 60 meters of each other, this creates opportunities
+                        for connected habitat for nesting birds to help them find the resources they need for
+                        raising the next generation.
+                        <br>
+                        <br>
+                        <b>Bees Layer</b>
+                        <br>
+                        Bees will venture an average of 150 meters from their homebase. When two or more
+                        backyard refuges are within 150 meters of each other, this provides connected
+                        habitat for bees to help them find food and nesting opportunities.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ChoroModal" tabindex="-1" aria-labelledby="ChoroModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="ChoroModalLabel"> <b>About the Neighborhood Density Map</b></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        This map shows the density of Backyard Refuges per neighborhood association or zipcode in the
+                        greater
+                        Albuquerque area. The data has been normalized by the number of households in each area, this
+                        makes the
+                        neighborhood associations and the zipcodes more visually comparable. The shading is based on the
+                        ratio
+                        of Backyard Refuges to the total number of households in the neighborhood association. Click on
+                        each
+                        area on the map to read the number of refuges in the area as well as and the ratio of Backyard
+                        Refuges
+                        to the total number of households.normalized value.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="DataModal" tabindex="-1" aria-labelledby="DataModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="DataModalLabel"> <b>Data Sources</b></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        The maps were created with data from the New Mexico Backyard Refuge Program, the U.S. Census
+                        Bureau, and with basemaps from USGS and ESRI.
+                        <br>
+                        Maps were made by Katie Slack from the GeoAIR Lab with consulatation from Laurel Ladwig, Dr.
+                        Liping Yang, and Rae Bennu. The maps were made for the New Mexico Backyard Refuge Program and
+                        the R.H. Mallory Center for Community Geography.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--MAP JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="JS_CSS_downloaded_libraries/leaflet.legend.css" />
+    <script src="JS_CSS_downloaded_libraries/leaflet.legend.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
+    
+    <!-- <script src="data/NMBYR_729_participants.js"></script> -->
+    <script src="data/nmbyr_data.js"></script>
+    <!-- <script src="data/nmbyr_data_814.js"></script> -->
+    <script src="data/NA-Zips_BYR.js"></script>
+    <!-- NEED TO DOWNLOAD FILE IF THIS WORKS -->
+    <script src="https://balladaniel.github.io/leaflet-dataclassification/leaflet-dataclassification.js"></script>
+    <script src="groupJS_scripts/mapJS.js"></script>
+
+
+    <!-- <script src="data/greatveg_totals.geojson"></script> -->
+
+
+</body>
+
+</html>

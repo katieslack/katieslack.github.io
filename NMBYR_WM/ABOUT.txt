@@ -1,0 +1,15 @@
+This web app is intended for use by the New Mexico Backyard Refuge Program (NMBYR) and Ciudad Soil & Water Conservation District (CSWCD) for public outreach and decision-making about NM BYR and can be used by anyone.
+
+This map of New Mexico, United States and center's on Albuquerque, New Mexico. 
+
+The webpage contains a web map with multiple layers, including a Choropleth that shows the density of BYR's within Albuquerque  as well as layers that show the habitat facilitated through  BYRs in the Albuquerque area. 
+
+This map was created with data from the NM BYR, and US Census Bureau data using GIS techniques and geospatial web programming. 
+
+Coding Libraries used to make this web page include: leaflet, and bootstrap. Leaflet plugins used include, leaflet.legend and leaflet.timeline. 
+
+- Katie Slack (Developer)
+- Dr. Liping Yang (Developer Advisor)
+- Laurel Ladwig (New Mexico Backyard Refuge Program Coordinator)
+
+Date: 08/11/2026
