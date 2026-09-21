@@ -1,4 +1,4 @@
-var data = {
+var data = 
 
     {
 "type": "FeatureCollection",
@@ -92,7 +92,7 @@ var data = {
 { "type": "Feature", "properties": { "acreage": "0.25252525", "participant by year": "2021-86", "participant overall": "2021-86", "latitude": 35.08697, "longitude": -106.6217017 }, "geometry": { "type": "Point", "coordinates": [ -106.6217017, 35.08697 ] } },
 { "type": "Feature", "properties": { "acreage": "0.0573921", "participant by year": "2021-87", "participant overall": "2021-87", "latitude": 35.1815504, "longitude": -106.6253992 }, "geometry": { "type": "Point", "coordinates": [ -106.6253992, 35.1815504 ] } },
 { "type": "Feature", "properties": { "acreage": "0.0573921", "participant by year": "2021-88", "participant overall": "2021-88", "latitude": 35.0669111, "longitude": -106.6897799 }, "geometry": { "type": "Point", "coordinates": [ -106.6897799, 35.0669111 ] } },
-{ "type": "Feature", "properties": { "acreage": "0.25252525", "participant by year": "2021-89", "participant overall": "2021-89", "latitude": 34.1689, "longitude": -106.5082034 }, "geometry": { "type": "Point", "coordinates": [ -106.5082034, 34.1689 ] } },
+{ "type": "Feature", "properties": { "acreage": "0.25252525", "participant by year": "2021-89", "participant overall": "2021-89", "latitude": 35.1814870000, "longitude": -106.6231690000 }, "geometry": { "type": "Point", "coordinates": [ -106.5082034, 34.1689 ] } },
 { "type": "Feature", "properties": { "acreage": "1.26262626", "participant by year": "2021-90", "participant overall": "2021-90", "latitude": 35.134213, "longitude": -106.5103477 }, "geometry": { "type": "Point", "coordinates": [ -106.5103477, 35.134213 ] } },
 { "type": "Feature", "properties": { "acreage": "0.50505051", "participant by year": "2021-91", "participant overall": "2021-91", "latitude": 35.0679039, "longitude": -106.5821172 }, "geometry": { "type": "Point", "coordinates": [ -106.5821172, 35.0679039 ] } },
 { "type": "Feature", "properties": { "acreage": "0.0573921", "participant by year": "2021-92", "participant overall": "2021-92", "latitude": 35.1146925, "longitude": -106.6715481 }, "geometry": { "type": "Point", "coordinates": [ -106.6715481, 35.1146925 ] } },
@@ -953,5 +953,5 @@ var data = {
 { "type": "Feature", "properties": { "acreage": "0.02295684", "participant by year": "2026-207", "participant overall": "2026-947", "latitude": 35.208418, "longitude": -106.726529 }, "geometry": { "type": "Point", "coordinates": [ -106.726529, 35.208418 ] } },
 { "type": "Feature", "properties": { "acreage": "0.02295684", "participant by year": "2026-208", "participant overall": "2026-948", "latitude": 35.208418, "longitude": -106.726529 }, "geometry": { "type": "Point", "coordinates": [ -106.726529, 35.208418 ] } }
 ]
-}
-}
+};
+

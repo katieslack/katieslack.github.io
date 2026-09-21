@@ -9,6 +9,23 @@ var USGS_USTopo = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/servi
 	attribution: 'Tiles courtesy of the <a href="https://usgs.gov/">U.S. Geological Survey</a>'
 });
 
+var Stadia_AlidadeSmooth = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.{ext}', {
+	minZoom: 0,
+	maxZoom: 20,
+	attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	ext: 'png'
+});
+
+var Esri_WorldTerrain = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: USGS, Esri, TANA, DeLorme, and NPS',
+	maxZoom: 13
+});
+
+var Esri_WorldGrayCanvas = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+	maxZoom: 16
+});
+
 
 
 var map = L.map('map', {
@@ -20,6 +37,8 @@ var map = L.map('map', {
     [-90, 180],
   ],
 });
+
+map.addControl(new L.Control.Fullscreen());
 
 
 
@@ -74,15 +93,24 @@ var map = L.map('map', {
 //     style: { color: 'red', fillColor: '#f03', fillOpacity: 0.5 }
 // }).addTo(map);
 
+//// half sized buffer ///
+// var birds_buffered = turf.buffer(data, 400, { units: 'meters' });
 
-var birds_buffered = turf.buffer(data, 400, { units: 'meters' });
+/// full sized buffer ///
+var birds_buffered = turf.buffer(data, 800, { units: 'meters' });
 
-// No need to wrap again
-var dissolved_birds = turf.dissolve(birds_buffered);
+/// dissolved buffers ///
+// var dissolved_birds = turf.dissolve(birds_buffered);
 
-var nestingbirds_buffered = turf.buffer(data, 30, {units: 'meters'});
 
-var dissolved_nestingbirds = turf.dissolve(nestingbirds_buffered);
+//// half sized buffer ///
+// var nestingbirds_buffered = turf.buffer(data, 30, {units: 'meters'});
+
+/// full sized buffer ///
+var nestingbirds_buffered = turf.buffer(data, 60, {units: 'meters'});
+
+/// dissolved buffers ///
+// var dissolved_nestingbirds = turf.dissolve(nestingbirds_buffered);
 
 // const map = L.map('map', {
 // 	center: [35.1324, -106.6952],
@@ -98,11 +126,14 @@ var dissolved_nestingbirds = turf.dissolve(nestingbirds_buffered);
 //   }
 // }).addTo(map);
 
+//// half sized buffer ///
+// var bees_buffered = turf.buffer(data, 75, { units: 'meters' });
 
-var bees_buffered = turf.buffer(data, 75, { units: 'meters' });
+/// full sized buffer ///
+var bees_buffered = turf.buffer(data, 150, { units: 'meters' });
 
-// No need to wrap again
-var dissolved_bees = turf.dissolve(bees_buffered);
+/// dissolved buffers ///
+// var dissolved_bees = turf.dissolve(bees_buffered);
 
 // L.geoJSON(dissolved_bees, {
 //   style: {
@@ -112,11 +143,13 @@ var dissolved_bees = turf.dissolve(bees_buffered);
 //   }
 // }).addTo(map);
 
-var areabirds = turf.area(dissolved_birds);
-var areabees = turf.area(dissolved_bees);
-var areanestingbirds = turf.area(dissolved_nestingbirds);
-console.log(areabirds)
-console.log(areabees)
+
+////////// calculate the area for the popup, using dissolved buffers //////////
+// var areabirds = turf.area(dissolved_birds);
+// var areabees = turf.area(dissolved_bees);
+// var areanestingbirds = turf.area(dissolved_nestingbirds);
+// console.log(areabirds)
+// console.log(areabees)
 
 
 ///////////// CHOROPLETH ////////////
@@ -132,22 +165,23 @@ console.log(areabees)
 // }
 
 function getColor(d) {
-    return d > 13.966  ? '#016c59' :
-           d > 9.375   ? '#1c9099' :
-           d > 5.256   ? '#67a9cf' :
-           d > 2.028   ? '#bdc9e1' :
-                      '#f6eff7';
+    return d > 2.662  ? '#016c59' :
+           d > 1.397   ? '#1c9099' :
+           d > 0.617   ? '#67a9cf' :
+           d > 0.268   ? '#bdc9e1' :
+                      // '#f6eff7';
+                      '#ffffffaa';
 }
 
 function style(feature) {
     return {
-        fillColor: getColor(feature.properties.density),
+        fillColor: getColor(feature.properties.BYRDensity),
         weight: 2,
         opacity: 1,
         // color: 'white',
         color: 'black',
        // dashArray: '3',
-        fillOpacity: 1
+        fillOpacity: .75
     };
 }
 
@@ -164,16 +198,7 @@ function style(feature) {
 //     )
 // ).addTo(map);
 
-var choropolys = L.geoJson(Chorodata, {
-    style: style,
-    onEachFeature: function(feature, layer) {
-        layer.bindPopup(
-            `<b>Neighborhood Association or Zip Code:</b> ${feature.properties.ID_NA_ZIP}
-             <br><b>Backyard refuges in the area:</b> ${feature.properties.BYR_Densit.toFixed(2)}
-             <br><b>Backyard refuges per households in the area</b> ${feature.properties.density}`
-        );
-    }
-}).addTo(map);
+
 
 //////////////
 // var birdsLayer = L.geoJSON(dissolved_birds, {
@@ -215,12 +240,33 @@ var choropolys = L.geoJson(Chorodata, {
 //     onEachFeature.bindPopup("<b>Bees Connected Habitat of " + dissolved_bees.features.featureArea + " .");
 //     });
 
+////////// COMMENTED OUT IS THE DISSOLVED BUFFERS /////////////////////
 
+// var birdsLayer = L.geoJSON(dissolved_birds, {
+//   style: {
+//     color: 'none',
+//     fillColor: 'rgba(1, 181, 79, 1)',
+//     fillOpacity: 0.5
+//   },
+//   onEachFeature: function (feature, layer) {
+//     const featureArea = turf.area(feature);
 
-var birdsLayer = L.geoJSON(dissolved_birds, {
+//     // store it if you want
+//     feature.properties.area_sqm = featureArea;
+
+//     let area_sqacres = 0.000247105 * featureArea;
+    
+//     // layer.bindPopup(
+//     //   "<b>Birds Potential Connected Habitat:</b> <br>" + area_sqacres.toFixed(2) + " acres"
+//     // );
+//   }
+// }).addTo(map);
+
+var birdsLayer = L.geoJSON(birds_buffered, {
   style: {
     color: 'none',
-    fillColor: 'rgba(1, 181, 79, 1)',
+    fillColor: '#41b6c4',
+    // fillColor: 'rgba(1, 181, 79, 1)',
     fillOpacity: 0.5
   },
   onEachFeature: function (feature, layer) {
@@ -231,16 +277,39 @@ var birdsLayer = L.geoJSON(dissolved_birds, {
 
     let area_sqacres = 0.000247105 * featureArea;
     
-    layer.bindPopup(
-      "<b>Birds Potential Connected Habitat:</b> <br>" + area_sqacres.toFixed(2) + " acres"
-    );
+    // layer.bindPopup(
+    //   "<b>Birds Potential Connected Habitat:</b> <br>" + area_sqacres.toFixed(2) + " acres"
+    // );
   }
-}).addTo(map);
+});
 
-var beesLayer = L.geoJSON(dissolved_bees, {
+// var beesLayer = L.geoJSON(dissolved_bees, {
+//   style: {
+//     color: 'none',
+//     fillColor: '#41b6c4',
+//     fillOpacity: 1
+//   }
+//   ,
+//   onEachFeature: function (feature, layer) {
+//     const featureArea = turf.area(feature);
+
+//     // store it if you want
+//     feature.properties.area_sqm = featureArea;
+//     let area_sqacres = 0.000247105 * featureArea;
+
+//     // layer.bindPopup(
+//     //   "<b>Bees Potential Connected Habitat:</b><br> " + area_sqacres.toFixed(2) + " acres"
+//     //   //
+//     //   //without the decimals
+//     //   //  "<b>Bees Potential Connected Habitat:</b> " + featureArea.toFixed(0) + " square acres"
+//     // );
+//   }
+// }).addTo(map);
+
+var beesLayer = L.geoJSON(bees_buffered, {
   style: {
     color: 'none',
-    fillColor: '#41b6c4',
+    fillColor: 'rgba(1, 181, 79, 1)',
     fillOpacity: 1
   }
   ,
@@ -251,16 +320,39 @@ var beesLayer = L.geoJSON(dissolved_bees, {
     feature.properties.area_sqm = featureArea;
     let area_sqacres = 0.000247105 * featureArea;
 
-    layer.bindPopup(
-      "<b>Bees Potential Connected Habitat:</b><br> " + area_sqacres.toFixed(2) + " acres"
-      //
-      //without the decimals
-      //  "<b>Bees Potential Connected Habitat:</b> " + featureArea.toFixed(0) + " square acres"
-    );
+    // layer.bindPopup(
+    //   "<b>Bees Potential Connected Habitat:</b><br> " + area_sqacres.toFixed(2) + " acres"
+    //   //
+    //   //without the decimals
+    //   //  "<b>Bees Potential Connected Habitat:</b> " + featureArea.toFixed(0) + " square acres"
+    // );
   }
-}).addTo(map);
+});
 
-var nestingLayer = L.geoJSON(dissolved_nestingbirds, {
+// var nestingLayer = L.geoJSON(dissolved_nestingbirds, {
+//   style: {
+//     color: 'none',
+//     fillColor: '#253494',
+//     fillOpacity: 1
+//   }
+//   ,
+//   onEachFeature: function (feature, layer) {
+//     const featureArea = turf.area(feature);
+
+//     // store it if you want
+//     feature.properties.area_sqm = featureArea;
+//     let area_sqacres = 0.000247105 * featureArea;
+
+//     // layer.bindPopup(
+//     //   "<b>Nesting Birds Potential Connected Habitat:</b><br> " + area_sqacres.toFixed(2) + " acres"
+//     //   //
+//     //   //without the decimals
+//     //   //  "<b>Bees Potential Connected Habitat:</b> " + featureArea.toFixed(0) + " square acres"
+//     // );
+//   }
+// }).addTo(map);
+
+var nestingLayer = L.geoJSON(nestingbirds_buffered, {
   style: {
     color: 'none',
     fillColor: '#253494',
@@ -274,16 +366,27 @@ var nestingLayer = L.geoJSON(dissolved_nestingbirds, {
     feature.properties.area_sqm = featureArea;
     let area_sqacres = 0.000247105 * featureArea;
 
-    layer.bindPopup(
-      "<b>Nesting Birds Potential Connected Habitat:</b><br> " + area_sqacres.toFixed(2) + " acres"
-      //
-      //without the decimals
-      //  "<b>Bees Potential Connected Habitat:</b> " + featureArea.toFixed(0) + " square acres"
-    );
+    // layer.bindPopup(
+    //   "<b>Nesting Birds Potential Connected Habitat:</b><br> " + area_sqacres.toFixed(2) + " acres"
+    //   //
+    //   //without the decimals
+    //   //  "<b>Bees Potential Connected Habitat:</b> " + featureArea.toFixed(0) + " square acres"
+    // );
   }
+});
+
+// OLD CODE:             //  <br><b>Backyard refuges in the area:</b> ${feature.properties.BYRDensity.toFixed(2)}
+
+var choropolys = L.geoJson(Chorodata, {
+    style: style,
+    onEachFeature: function(feature, layer) {
+        layer.bindPopup(
+            `<b>Neighborhood Association or Zip Code:</b> ${feature.properties.ID_NA_ZIPS}
+             <br><b>Backyard refuges in the area:</b> ${(feature.properties.BYRDensity || 0).toFixed(2)} <b>%
+             <br><b>Backyard refuges per households in the area</b> ${feature.properties.BYRCOUNT}`
+        );
+    }
 }).addTo(map);
-
-
 
 
 // var birds = L.layerGroup([birdsLayer]);
@@ -297,16 +400,20 @@ var nestingLayer = L.geoJSON(dissolved_nestingbirds, {
 
 var buffersGroup = L.layerGroup([birdsLayer, nestingLayer, beesLayer]);
 
+buffersGroup.addTo(map);
+
 var overlayMaps = {
+  "Backyard Refuge Density": choropolys,
   "Habitat Layer": buffersGroup,
-  "Backyard Refuge Density": choropolys
 };
 
 
 
 var baseMaps = {
     "USGS": USGS_USTopo,
-    "ESRI": Esri_WorldTopoMap
+    "ESRI": Esri_WorldTopoMap,
+    "Terrain": Esri_WorldTerrain,
+    "Gray Basemap": Esri_WorldGrayCanvas
 };
 
 // var overlayMaps = {
@@ -556,7 +663,7 @@ const legend = L.control.Legend({
     type: "circle",
     radius: 10,
     color: 'none',
-    fillColor: "rgba(1, 181, 79, 1)",
+    fillColor: "#41b6c4",
     fillOpacity: 0.5,
     weight: .1,
   },
@@ -574,7 +681,7 @@ const legend = L.control.Legend({
                 type: "circle",
                 radius: 10,
                 color: 'none',
-                fillColor: "#41b6c4",
+                fillColor: "rgba(1, 181, 79, 1)",
                 fillOpacity: 1,
                 weight: .1,
   },
@@ -653,7 +760,7 @@ const Chorolegend = L.control.Legend({
     symbolWidth: 10,
     symbolHeight: 10,
     color: '#000403',
-    fillColor: "#f6eff7",
+    fillColor: "#ffffffaa",
     fillOpacity: 1,
     weight: 1,
   }
